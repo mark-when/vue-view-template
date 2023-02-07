@@ -15,7 +15,7 @@ import type {
 import {
   type EventPath,
   equivalentPaths,
-} from "@markwhen/view-client/lib/paths";
+} from "@markwhen/view-client/dist/paths";
 
 export const useMarkwhenStore = defineStore("markwhen", () => {
   const app = ref<AppState>();
