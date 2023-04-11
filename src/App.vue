@@ -6,7 +6,7 @@ const markwhenStore = useMarkwhenStore();
 
 <template>
   <div>
-    {{ markwhenStore.markwhen?.page.transformed }}
+    {{ markwhenStore.markwhen?.transformed }}
   </div>
 </template>
 
