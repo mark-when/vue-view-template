@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import produce from "immer";
+import { produce } from "immer";
 import {
   type AppState,
   type DisplayScale,
@@ -11,7 +11,7 @@ import type {
   DateFormat,
   DateRangeIso,
   DateTimeGranularity,
-} from "@markwhen/parser/lib/Types";
+} from "@markwhen/parser";
 import {
   type EventPath,
   equivalentPaths,
@@ -25,9 +25,11 @@ export const useMarkwhenStore = defineStore("markwhen", () => {
   const onJumpToRange = ref((range: DateRangeIso) => {});
 
   const { postRequest } = useLpc({
-    state: (s) => {
-      app.value = produce(app.value, () => s.app);
-      markwhen.value = produce(markwhen.value, () => s.markwhen);
+    appState: (s) => {
+      app.value = produce(app.value, () => s);
+    },
+    markwhenState: (s) => {
+      markwhen.value = produce(markwhen.value, () => s);
     },
     jumpToPath: ({ path }) => {
       onJumpToPath.value?.(path);
@@ -79,7 +81,8 @@ export const useMarkwhenStore = defineStore("markwhen", () => {
     postRequest("editEventDateRange", params);
   };
 
-  const requestStateUpdate = () => postRequest("state");
+  const requestStateUpdate = () =>
+    postRequest("markwhenState") || postRequest("appState");
   requestStateUpdate();
 
   return {
