@@ -6,29 +6,29 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview --port=5176",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit"
+    "type-check": "vue-tsc"
   },
   "dependencies": {
-    "@markwhen/parser": "^0.10.14",
-    "@markwhen/view-client": "^1.4.4",
-    "@vueuse/core": "^10.6.1",
-    "@vueuse/integrations": "^10.6.1",
-    "immer": "^10.0.3",
-    "luxon": "^3.4.4",
-    "pinia": "^2.1.7",
-    "vue": "^3.2.45"
+    "@markwhen/parser": "^0.12.0",
+    "@markwhen/view-client": "^1.5.0",
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/integrations": "^11.1.0",
+    "immer": "^10.1.1",
+    "luxon": "^3.5.0",
+    "pinia": "^2.2.3",
+    "vue": "^3.5.10"
   },
   "devDependencies": {
-    "@types/luxon": "^3.3.5",
+    "@types/luxon": "^3.4.2",
     "@types/node": "^18.11.12",
-    "@vitejs/plugin-vue": "^4.5.0",
-    "@vue/tsconfig": "^0.4.0",
-    "autoprefixer": "^10.4.16",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/tsconfig": "^0.5.1",
+    "autoprefixer": "^10.4.20",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.3.2",
-    "vite": "^5.0.2",
-    "vue-tsc": "^1.8.22"
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vue-tsc": "^2.1.6"
   }
 }
